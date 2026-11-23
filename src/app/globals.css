@@ -5,6 +5,8 @@
 @import "../features/home/components/home.css";
 @import "../features/home/components/hero.css";
 @import "../features/home/components/Featured-vehicle.css";
+@import "../components/shared/placeholder-page.css";
+
 
 
 /* Global reset */
