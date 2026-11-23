@@ -1,26 +1,45 @@
-@import "tailwindcss";
+@import "../components/layout/Navbar.css";
+@import "../components/layout/Mobile-navigation.css";
+@import "../components/layout/footer.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import "../features/home/components/home.css";
+@import "../features/home/components/hero.css";
+@import "../features/home/components/Featured-vehicle.css";
+
+
+/* Global reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: clip;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--color-background);
+  color: var(--color-text);
+  overflow-x: clip;
+}
+
+:root {
+  --color-background: #090909;
+  --color-surface: #141414;
+  --color-text: #f5f5f5;
+  --color-muted: #a5a5a5;
+  --color-accent: #c5a46d;
+
+  --font-heading: Arial, sans-serif;
+  --font-body: Arial, sans-serif;
+
+  --container-width: 1440px;
+  --section-spacing: 100px;
 }

@@ -1,0 +1,581 @@
+
+/* =========================================
+   HOME PAGE — GLOBAL COMPONENT STYLES
+========================================= */
+
+:root {
+  --home-background: #090909;
+  --home-surface: #141414;
+  --home-text: #f5f5f5;
+  --home-muted: #a5a5a5;
+  --home-accent: #c5a46d;
+  --home-container: 1440px;
+}
+
+/* Shared container */
+
+.home-container {
+  width: min(100% - 80px, var(--home-container));
+  margin-inline: auto;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero-section {
+  position: relative;
+  min-height: 760px;
+  height: calc(100svh - 80px);
+  max-height: 950px;
+  overflow: hidden;
+  background: var(--home-background);
+  color: var(--home-text);
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.48) 48%,
+      rgba(0, 0, 0, 0.12) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.45),
+      transparent 45%
+    );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(100% - 80px, var(--home-container));
+  margin-inline: auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-block: 100px;
+}
+
+.hero-eyebrow {
+  color: var(--home-accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  max-width: 850px;
+  font-size: clamp(48px, 7vw, 100px);
+  line-height: 0.98;
+  font-weight: 500;
+  letter-spacing: -3px;
+  margin-bottom: 24px;
+}
+
+.hero-description {
+  max-width: 540px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hero-primary,
+.hero-secondary {
+  min-height: 54px;
+  padding: 0 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.hero-primary {
+  background: var(--home-accent);
+  color: #090909;
+}
+
+.hero-primary:hover {
+  background: #dfc18a;
+}
+
+.hero-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  color: white;
+}
+
+.hero-secondary:hover {
+  background: white;
+  color: #090909;
+}
+
+.hero-controls {
+  position: absolute;
+  z-index: 3;
+  right: 40px;
+  bottom: 50px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-arrow {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hero-arrow:hover {
+  background: var(--home-accent);
+  color: #090909;
+}
+
+.hero-pagination {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.hero-dot {
+  width: 25px;
+  height: 3px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.hero-dot.active {
+  background: var(--home-accent);
+}
+
+/* =========================================
+   FEATURED VEHICLES
+========================================= */
+
+.featured-section {
+  padding: 110px 0;
+  background: var(--home-background);
+  color: var(--home-text);
+}
+
+.section-heading {
+  margin-bottom: 48px;
+}
+
+.section-eyebrow {
+  color: var(--home-accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: clamp(32px, 4vw, 54px);
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+.section-description {
+  max-width: 600px;
+  margin-top: 16px;
+  color: var(--home-muted);
+  line-height: 1.8;
+}
+
+.featured-empty {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: var(--home-muted);
+}
+
+.featured-empty h3 {
+  margin: 20px 0 10px;
+  color: var(--home-text);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.featured-empty p {
+  max-width: 420px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   IMPORT AND SELL SECTIONS
+========================================= */
+
+.services-section {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  background: var(--home-surface);
+}
+
+.service-panel {
+  min-height: 460px;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: var(--home-text);
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.import-panel {
+  background: #111;
+}
+
+.sell-panel {
+  background: #191919;
+}
+
+.service-panel:hover {
+  background: #222;
+}
+
+.service-panel h2 {
+  max-width: 500px;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.1;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.service-panel p {
+  max-width: 460px;
+  color: var(--home-muted);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--home-accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   ABOUT PREVIEW
+========================================= */
+
+.about-section {
+  padding: 120px 0;
+  background: var(--home-background);
+  color: var(--home-text);
+}
+
+.about-content {
+  max-width: 850px;
+}
+
+.about-content p {
+  color: var(--home-muted);
+  font-size: 16px;
+  line-height: 1.9;
+  margin-top: 24px;
+}
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+.contact-section {
+  padding: 100px 40px;
+  background: var(--home-surface);
+  color: var(--home-text);
+  text-align: center;
+}
+
+.contact-content {
+  max-width: 750px;
+  margin-inline: auto;
+}
+
+.contact-content h2 {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.contact-content p {
+  color: var(--home-muted);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+   768px – 1024px
+========================================= */
+
+@media (max-width: 1024px) {
+  .home-container {
+    width: min(100% - 48px, var(--home-container));
+  }
+
+  .hero-content {
+    width: calc(100% - 80px);
+  }
+
+  .hero-section {
+    min-height: 680px;
+  }
+
+  .hero-title {
+    max-width: 700px;
+    font-size: clamp(52px, 8vw, 76px);
+  }
+
+  .hero-description {
+    max-width: 480px;
+    font-size: 16px;
+  }
+
+  .featured-section,
+  .about-section {
+    padding: 85px 0;
+  }
+
+  .service-panel {
+    min-height: 400px;
+    padding: 48px;
+  }
+
+  .contact-section {
+    padding: 85px 32px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   Up to 767px
+========================================= */
+
+@media (max-width: 767px) {
+  .home-container {
+    width: calc(100% - 40px);
+  }
+
+  .hero-section {
+    min-height: 650px;
+    height: calc(100svh - 70px);
+    max-height: 820px;
+  }
+
+  .hero-slide {
+    background-position: 60% center;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.78),
+        rgba(0, 0, 0, 0.35)
+      ),
+      linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.65),
+        transparent 75%
+      );
+  }
+
+  .hero-content {
+    width: calc(100% - 40px);
+    padding-top: 60px;
+    padding-bottom: 130px;
+  }
+
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    margin-bottom: 18px;
+  }
+
+  .hero-title {
+    max-width: 100%;
+    font-size: clamp(42px, 12vw, 62px);
+    letter-spacing: -1.5px;
+    line-height: 1.02;
+    margin-bottom: 18px;
+  }
+
+  .hero-description {
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 26px;
+  }
+
+  .hero-actions {
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-primary,
+  .hero-secondary {
+    width: 100%;
+    min-height: 50px;
+  }
+
+  .hero-controls {
+    right: 20px;
+    bottom: 25px;
+    gap: 8px;
+  }
+
+  .hero-arrow {
+    width: 38px;
+    height: 38px;
+  }
+
+  .hero-dot {
+    width: 18px;
+  }
+
+  .featured-section,
+  .about-section {
+    padding: 70px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 32px;
+  }
+
+  .section-title {
+    font-size: 34px;
+  }
+
+  .section-description {
+    font-size: 14px;
+  }
+
+  .featured-empty {
+    min-height: 240px;
+    padding: 28px 20px;
+  }
+
+  .services-section {
+    grid-template-columns: 1fr;
+  }
+
+  .service-panel {
+    min-height: 340px;
+    padding: 48px 24px;
+  }
+
+  .service-panel h2 {
+    font-size: 36px;
+  }
+
+  .service-panel p {
+    font-size: 14px;
+  }
+
+  .about-content p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .contact-section {
+    padding: 75px 20px;
+  }
+
+  .contact-content h2 {
+    font-size: 38px;
+  }
+
+  .contact-content p {
+    font-size: 14px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE DEVICES
+   Up to 380px
+========================================= */
+
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 39px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-controls {
+    right: 15px;
+  }
+
+  .service-panel {
+    padding: 40px 20px;
+  }
+
+  .service-panel h2 {
+    font-size: 31px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-primary,
+  .hero-secondary,
+  .hero-arrow,
+  .service-panel {
+    transition: none;
+  }
+}

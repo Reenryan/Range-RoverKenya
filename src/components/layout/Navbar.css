@@ -1,0 +1,110 @@
+
+.navbar {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  background: #090909;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar-container {
+  width: min(100% - 64px, 1440px);
+  min-height: 88px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: baseline;
+  flex-shrink: 0;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.navbar-brand-name {
+  color: #f5f5f5;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.navbar-brand-location {
+  color: #c5a46d;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.navbar-desktop-navigation {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navbar-desktop-navigation a {
+  color: #c5c5c5;
+  font-size: 12px;
+  text-decoration: none;
+  transition: color 180ms ease;
+  white-space: nowrap;
+}
+
+.navbar-desktop-navigation a:hover {
+  color: #c5a46d;
+}
+
+.navbar-contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 18px;
+  background: #c5a46d;
+  color: #090909;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 180ms ease;
+}
+
+.navbar-contact-button:hover {
+  background: #d8ba86;
+}
+
+@media (max-width: 1050px) {
+  .navbar-container {
+    width: min(100% - 40px, 1440px);
+  }
+
+  .navbar-desktop-navigation {
+    gap: 16px;
+  }
+
+  .navbar-desktop-navigation a {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-container {
+    min-height: 76px;
+  }
+
+  .navbar-desktop-navigation,
+  .navbar-contact-button {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    width: calc(100% - 36px);
+  }
+
+  .navbar-brand-name {
+    font-size: 16px;
+  }
+}
