@@ -1,5 +1,5 @@
 import PlaceholderPage from "@/components/shared/Placeholderpage";
-
+export const instant = false;
 interface VehicleDetailsPageProps {
   params: Promise<{
     slug: string;
